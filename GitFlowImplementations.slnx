@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="Gitflow.Bussiness/Gitflow.Bussiness.csproj" />
+  <Project Path="Gitflow.DataAcces/Gitflow.DataAcces.csproj" />
+  <Project Path="GitFlow.Entities/GitFlow.Entities.csproj" />
+  <Project Path="GitFlow.UI/GitFlow.UI.csproj" />
+</Solution>
