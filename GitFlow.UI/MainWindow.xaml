@@ -7,6 +7,20 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
+        <DockPanel x:Name="ControlDock" LastChildFill="False" Margin="0,0,0,387">
+            <ToolBarTray x:Name="TBTray" HorizontalAlignment="Center" Height="auto" VerticalAlignment="Top" Width="800">
+                <ToolBar HorizontalAlignment="Center" Height="auto" VerticalAlignment="Center" Width="800">
+
+                    <TextBox TextWrapping="Wrap" Text="TextBox" Width="258" VerticalAlignment="Top" Height="29"/>
+                    <Button x:Name="CreateBtn" Content="Button" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top"/>
+                    <Button x:Name="DeleteBtn" Content="Button" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top"/>
+                    <Button x:Name="EditBtn" Content="Button" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top"/>
+
+                </ToolBar>
+            </ToolBarTray>
+        </DockPanel>
+        <DataGrid x:Name="MainCrudDataGrid" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="10,74,0,-74" SelectionChanged="MainCrudDataGrid_SelectionChanged" Loaded="MainCrudDataGrid_Loaded"/>
+
 
     </Grid>
 </Window>
