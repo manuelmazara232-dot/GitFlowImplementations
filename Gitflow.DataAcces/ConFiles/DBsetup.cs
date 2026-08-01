@@ -4,7 +4,7 @@ using System.Configuration;
 
 namespace Gitflow.DataAcces.ConFiles
 {
-    internal class DBsetup
+    public class DBsetup
     {
         string QRP = ConfigurationManager.AppSettings["QueryPath"];
         string serverConn = ConfigurationManager.ConnectionStrings["ServerConnString"]?.ConnectionString;
@@ -39,9 +39,10 @@ SELECT 0;
 END;";
                 using (var command = new SqlCommand(query, conn))
                 {
-                    command.ExecuteNonQuery();
-                    int result = Convert.ToInt32(command.ExecuteScalar());
-                    return result == 0;
+                    object resultObj = command.ExecuteScalar();
+                    int result = resultObj != null ? Convert.ToInt32(resultObj) : 0;
+
+                    return result == 1;
                 }
             }
         }
