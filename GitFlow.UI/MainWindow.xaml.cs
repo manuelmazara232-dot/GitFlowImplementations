@@ -19,6 +19,7 @@ namespace GitFlow.UI
     public partial class MainWindow : Window
     {
         private readonly IServices<Person> _personService;
+
         public MainWindow([FromKeyedServices("CrudService")] IServices<Person> PersonService)
         {
             _personService = PersonService;
@@ -38,6 +39,11 @@ namespace GitFlow.UI
         {
             List<Person> People = await _personService.GetAllAsync();
             MainCrudDataGrid.ItemsSource = People;
+        }
+
+        private void CreateBtn_Click(object sender, RoutedEventArgs e)
+        {
+            MainFrame.Navigate(new AddEmployee(_personService));
         }
     }
 }
