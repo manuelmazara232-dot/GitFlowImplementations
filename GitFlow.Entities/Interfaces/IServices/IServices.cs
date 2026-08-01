@@ -5,8 +5,9 @@ namespace GitFlow.Entities.Interfaces.IServices
     {
         public void setUp();
         public Task<List<T>> GetAllAsync();
+        
+        public  T Create(T entity);
         /*       
-                public  Task<T> Create(T entity);
                 public  Task<T> Update(int EntityId, T entity);
                 public  Task<T> Delete(int ID);
           */

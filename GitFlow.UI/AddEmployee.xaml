@@ -1,0 +1,21 @@
+﻿<Page x:Class="GitFlow.UI.AddEmployee"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:GitFlow.UI"
+      mc:Ignorable="d" 
+      d:DesignHeight="400"
+      Title="AddEmployee" Width="408">
+
+    <Grid Background="White" HorizontalAlignment="Center" Width="408">
+        <StackPanel>
+            <TextBox x:Name="FIRSTNAMETxtBx" TextWrapping="Wrap" Text="TextBox" Width="266" Height="32" Margin="0,20,0,0"/>
+            <TextBox x:Name="LASTNAMETxtBx" TextWrapping="Wrap" Text="TextBox" Width="266" Height="32" Margin="0,20,0,0"/>
+            <TextBox x:Name="DNITxtBx1" TextWrapping="Wrap" Text="TextBox" Width="266" Height="32" Margin="0,20,0,0"/>
+            <TextBox x:Name="GenderTxtBx" TextWrapping="Wrap" Text="TextBox" Width="266" Height="32" Margin="0,20,0,0"/>
+            <DatePicker x:Name="BirthDatePicker" Width="198" Height="64"/>
+            <Button Content="Button" Height="64" Click="Button_Click"/>
+        </StackPanel>
+    </Grid>
+</Page>
