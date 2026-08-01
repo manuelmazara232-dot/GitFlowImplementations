@@ -12,14 +12,15 @@
                 <ToolBar HorizontalAlignment="Center" Height="auto" VerticalAlignment="Center" Width="800">
 
                     <TextBox TextWrapping="Wrap" Text="TextBox" Width="258" VerticalAlignment="Top" Height="29"/>
-                    <Button x:Name="CreateBtn" Content="Button" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top"/>
+                    <Button x:Name="CreateBtn" Content="Button" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Click="CreateBtn_Click"/>
                     <Button x:Name="DeleteBtn" Content="Button" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top"/>
                     <Button x:Name="EditBtn" Content="Button" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top"/>
 
                 </ToolBar>
             </ToolBarTray>
         </DockPanel>
-        <DataGrid x:Name="MainCrudDataGrid" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="10,74,0,-74" SelectionChanged="MainCrudDataGrid_SelectionChanged" Loaded="MainCrudDataGrid_Loaded"/>
+        <DataGrid x:Name="MainCrudDataGrid" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="0,41,10,-41" SelectionChanged="MainCrudDataGrid_SelectionChanged" Loaded="MainCrudDataGrid_Loaded"/>
+        <Frame x:Name="MainFrame" NavigationUIVisibility="Hidden" />
 
 
     </Grid>

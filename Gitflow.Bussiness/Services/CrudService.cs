@@ -28,5 +28,11 @@ namespace Gitflow.Bussiness.Services
             People = await _DbSet.ToListAsync();
             return People;
         }
+        public Person Create(Person person)
+        {
+            _DbSet.Add(person);
+            _context.SaveChanges();
+            return person;
+        }
     }
 }
