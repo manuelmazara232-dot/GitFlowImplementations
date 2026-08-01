@@ -34,5 +34,10 @@ namespace Gitflow.Bussiness.Services
             _context.SaveChanges();
             return person;
         }
+        public Person Delete(Person person) {
+            _DbSet.Remove(person);
+            _context.SaveChanges(true);
+            return person;
+        }
     }
 }
