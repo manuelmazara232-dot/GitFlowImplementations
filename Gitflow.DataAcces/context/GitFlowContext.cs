@@ -1,5 +1,5 @@
 ﻿#nullable disable
-using Gitflow.entites.Models;
+using GitFlow.Entities.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace Gitflow.DataAcces.context;
