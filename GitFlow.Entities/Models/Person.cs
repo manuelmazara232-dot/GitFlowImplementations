@@ -2,7 +2,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace Gitflow.entites.Models;
+namespace GitFlow.Entities.Models;
 
 public partial class Person
 {
