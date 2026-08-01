@@ -45,5 +45,19 @@ namespace GitFlow.UI
         {
             MainFrame.Navigate(new AddEmployee(_personService));
         }
+
+        private void DeleteBtn_Click(object sender, RoutedEventArgs e)
+        {
+            
+           Person i = (Person)MainCrudDataGrid.SelectedItem;
+            _personService.Delete(i);
+            MainCrudDataGrid_Loaded(sender, e);
+        }
+
+        private void EditBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Person person = (Person)MainCrudDataGrid.SelectedItem;
+            this.MainFrame.Navigate(new EditEmployee(person.Id, _personService));
+        }
     }
 }

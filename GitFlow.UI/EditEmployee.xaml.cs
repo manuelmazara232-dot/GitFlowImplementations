@@ -1,4 +1,7 @@
-﻿using System;
+﻿using GitFlow.Entities.Interfaces.IServices;
+using GitFlow.Entities.Models;
+using Microsoft.Extensions.DependencyInjection;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -10,36 +13,33 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using GitFlow.Entities.Interfaces.IServices;
-using GitFlow.Entities.Models;
-using Microsoft.Extensions.DependencyInjection;
+
 namespace GitFlow.UI
 {
     /// <summary>
-    /// Interaction logic for AddEmployee.xaml
+    /// Interaction logic for EditEmployee.xaml
     /// </summary>
-    public partial class AddEmployee : Page
+    public partial class EditEmployee : Page
     {
-        private readonly IServices<Person> _PersonService; 
-        public AddEmployee([FromKeyedServices("CrudService")] IServices<Person> Service)
+        private readonly IServices<Person> _PersonService;
+        public EditEmployee(int PersonId, [FromKeyedServices("CrudService")] IServices<Person> Service)
         {
-            _PersonService =Service;
+            _PersonService = Service;
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private async void Button_Click(object sender, RoutedEventArgs e)
         {
             Person person = new Person();
             person.Firstname = FIRSTNAMETxtBx.Text;
-            person.Lastname = LASTNAMETxtBx.Text;   
-            person.Gender = GenderTxtBx.Text;   
+            person.Lastname = LASTNAMETxtBx.Text;
+            person.Gender = GenderTxtBx.Text;
             person.Dni = DNITxtBx1.Text;
             person.Birthdate = DateOnly.FromDateTime(BirthDatePicker.SelectedDate.Value);
-            
-            _PersonService.Create(person);
+            _PersonService.Update(this.PersistId, person);
             this.IsEnabled = false;
             this.Visibility = Visibility.Collapsed;
-
+                        
         }
     }
 }
