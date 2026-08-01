@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GitFlow.Entities.Models;
+using System;
 namespace GitFlow.Entities.Interfaces.IServices
 {
     public interface IServices<T>
@@ -7,9 +8,8 @@ namespace GitFlow.Entities.Interfaces.IServices
         public Task<List<T>> GetAllAsync();
         
         public  T Create(T entity);
-        /*       
-                public  Task<T> Update(int EntityId, T entity);
-                public  Task<T> Delete(int ID);
-          */
+        public Person Delete(Person person);
+        public Task<Person> Update(int ID, Person person);
+    
     }
 }
