@@ -14,7 +14,7 @@
                     <TextBox TextWrapping="Wrap" Text="TextBox" Width="258" VerticalAlignment="Top" Height="29"/>
                     <Button x:Name="CreateBtn" Content="Create" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Click="CreateBtn_Click"/>
                     <Button x:Name="DeleteBtn" Content="Delete" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Click="DeleteBtn_Click"/>
-                    <Button x:Name="EditBtn" Content="Button" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top"/>
+                    <Button x:Name="EditBtn" Content="Edit" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Click="EditBtn_Click"/>
 
                 </ToolBar>
             </ToolBarTray>
