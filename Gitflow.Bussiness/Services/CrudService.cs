@@ -39,5 +39,34 @@ namespace Gitflow.Bussiness.Services
             _context.SaveChanges(true);
             return person;
         }
+        public async Task<Person>Update(int ID, Person person)
+        {
+            Person Existing = await _DbSet.FindAsync(ID);
+            if (Existing == null) { throw new KeyNotFoundException("Register not found."); }
+
+            var primaryKeyName = _DbSet.Entry(Existing).Metadata.FindPrimaryKey()
+                                ?.Properties.Select(p => p.Name).FirstOrDefault();
+
+            var existingEntry = _DbSet.Entry(Existing);
+            var newEntry = _DbSet.Entry(person);
+
+            foreach (var property in existingEntry.Properties)
+            {
+                string propName = property.Metadata.Name;
+
+                if (propName == primaryKeyName) continue;
+
+                var newValue = newEntry.Property(propName).CurrentValue;
+
+                
+                    property.CurrentValue = newValue;
+                    property.IsModified = true;
+               
+            }
+
+            await _context.SaveChangesAsync();
+
+            return Existing;
+        }
     }
 }

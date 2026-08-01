@@ -53,5 +53,11 @@ namespace GitFlow.UI
             _personService.Delete(i);
             MainCrudDataGrid_Loaded(sender, e);
         }
+
+        private void EditBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Person person = (Person)MainCrudDataGrid.SelectedItem;
+            this.MainFrame.Navigate(new EditEmployee(person.Id, _personService));
+        }
     }
 }

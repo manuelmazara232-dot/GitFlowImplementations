@@ -9,8 +9,7 @@ namespace GitFlow.Entities.Interfaces.IServices
         
         public  T Create(T entity);
         public Person Delete(Person person);
-        /*       
-                public  Task<T> Update(int EntityId, T entity);
-          */
+        public Task<Person> Update(int ID, Person person);
+    
     }
 }
